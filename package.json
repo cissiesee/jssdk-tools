@@ -1,0 +1,40 @@
+{
+  "name": "lk-wxjssdk",
+  "version": "1.0.2",
+  "description": "weixin jssdk",
+  "main": "es/index.js",
+  "scripts": {
+    "es5": "tsc --outDir compile && babel compile -d es",
+    "build": "webpack --config=./config/webpack.prod.babel.js",
+    "build-ie8": "webpack --config=./config/webpack.prod-ie8.babel.js",
+    "dev": "webpack --config=./config/webpack.dev.babel.js --progress --colors --watch",
+    "test": "mocha --timeout 30000 --compilers js:babel-core/register --require ./test/setup.js ./test/*.spec.js"
+  },
+  "author": "huangzt",
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "core-js": "^2.5.3",
+    "es5-shim": "^4.5.9",
+    "mocha": "^3.5.3",
+    "tslint": "^5.7.0",
+    "typedoc": "^0.8.0",
+    "typedoc-webpack-plugin": "^1.1.4",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.6",
+    "webpack-merge": "^4.1.0"
+  },
+  "typescript": {
+    "definition": "dist/lib.d.ts"
+  },
+  "typings": "dist/lib.d.ts"
+}
